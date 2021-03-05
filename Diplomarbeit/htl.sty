@@ -1,0 +1,62 @@
+\usepackage{htlstp}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[naustrian]{babel}
+\usepackage[width=160mm,height=240mm,centering]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor,tikz}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{wrapfig}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+\usepackage[
+	colorlinks=black,
+	urlcolor=black,
+	linkcolor=black,
+	pdfborder={0 0 0}
+]{hyperref}
+
+
+\def\qq#1{{\glqq #1\grqq}}
+\doublerulesep=0pt
+
+\lhead{\htlstplogo{2cm}}
+\chead{\titel}
+\rhead{Seite \thepage}
+\lfoot{\jahrgang}
+\cfoot{Elektrotechnik}
+\rfoot{\schueler}
+
+
+\def\jahrgang{~}
+\def\titel{~}
+\def\schueler{~}
+
+\def\Jahrgang#1{\def\jahrgang{#1}}
+\def\Titel#1{\def\titel{#1}}
+\def\Schueler#1{\def\schueler{#1}}
+
+
+\long\def\Titelpage{
+\begin{titlepage}
+	\centering
+    \vspace{3cm}
+	\htlstptextlogo{15cm}
+	\par \vspace{2cm}
+	{\resizebox{\linewidth}{!}{\itshape \scshape \textbf{\titel}}}
+	\par \vspace{2cm}
+	\textbf{\huge \scshape \schueler}
+	\par \vspace{2cm}
+	\textbf{\large \scshape \jahrgang}
+	\vfill
+	{\large \today \par}
+\end{titlepage}
+\setcounter{page}{1}
+}
