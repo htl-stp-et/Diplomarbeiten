@@ -1,0 +1,212 @@
+% ===========================================================================
+% Eigene Definitionen fuer LATEX                                   V 1.7.1996
+% ===========================================================================
+
+% ---------------------------------------------------------------------------
+% Tabulatoraehnliche Umgebung (aus KOMA)                             1.7.1996
+% ---------------------------------------------------------------------------
+\newenvironment{tabulator}[2][]
+               {\def\sc@septext{#1}
+                \list{}{\settowidth{\labelwidth}{#2#1}
+                        \leftmargin\labelwidth \advance\leftmargin by \labelsep
+                        \let\makelabel\tabulatorlabel}}
+               {\endlist}
+\newenvironment{Zerotabulator}[2][]
+               {\def\sc@septext{#1}
+                \list{}{\topsep0pt\itemsep0pt\parsep0pt\settowidth{\labelwidth}{#2#1}
+                        \leftmargin\labelwidth \advance\leftmargin by \labelsep
+                        \let\makelabel\tabulatorlabel}}
+               {\endlist}
+\newcommand\tabulatorlabel[1]{#1\hfil\sc@septext}
+
+% ---------------------------------------------------------------------------
+% Zentriert hervorheben                                             30.6.1996
+% ---------------------------------------------------------------------------
+\def\Emph#1{\par\medskip\centerline{\large\bfseries#1}}
+
+% ---------------------------------------------------------------------------
+% Description Umgebung ohne Leerraum zwischen den Items              3.3.1996
+% ---------------------------------------------------------------------------
+\makeatletter
+\newenvironment{zerodescription}
+   {\list{}{\topsep0pt\itemsep0pt\topsep0pt\parsep0pt\labelwidth\z@%
+   \itemindent-\leftmargin\let\makelabel\descriptionlabel}}{\endlist}
+\newenvironment{Zerodescription}
+   {\list{}{\topsep0pt\itemsep0pt\parsep0pt\labelwidth\z@%
+   \itemindent-\leftmargin\let\makelabel\descriptionlabel}}{\endlist}
+\makeatother
+
+% ---------------------------------------------------------------------------
+% Enumerate Umgebung ohne Leerraum zwischen den Items                3.3.1996
+% ---------------------------------------------------------------------------
+\makeatletter
+\newenvironment{zeroenumerate}
+   {\begin{list}{\arabic{enumi}.}{\usecounter{enumi}\parsep0pt\topsep0pt\itemsep0pt}}
+   {\end{list}}
+\newenvironment{Zeroenumerate}
+   {\begin{list}{\arabic{enumi}.}{\usecounter{enumi}\parsep0pt\itemsep0pt}}
+   {\end{list}}
+\makeatother
+
+% ---------------------------------------------------------------------------
+% Itemize Umgebung ohne Leerraum zwischen den Items                 27.6.1996
+% ---------------------------------------------------------------------------
+\makeatletter
+\newenvironment{zeroitemize}
+   {\begin{list}{$\bullet$}{\parsep0pt\topsep0pt\itemsep0pt}}
+   {\end{list}}
+\newenvironment{Zeroitemize}
+   {\begin{list}{$\bullet$}{\parsep0pt\itemsep0pt}}
+   {\end{list}}
+\makeatother
+
+% ---------------------------------------------------------------------------
+% Markierung mit kleinen Boxen                                     30.12.1995
+% ---------------------------------------------------------------------------
+\def\xbbox{{\setbox0\hbox{x}\rule{\ht0}{\ht0}}}
+\def\Xbbox{{\setbox0\hbox{X}\rule{\ht0}{\ht0}}}
+\def\xwbox{{\fboxsep0pt\setbox0\hbox{x}\dimen0\ht0\advance
+    \dimen0by2\fboxrule\framebox[\dimen0]{\phantom x}}}
+\def\Xwbox{{\fboxsep0pt\setbox0\hbox{X}\dimen0\ht0\advance
+    \dimen0by2\fboxrule\framebox[\dimen0]{\phantom X}}}
+\def\xgbox{{\fboxsep0pt\setbox1\hbox{x}\dimen1\ht1\advance\dimen1by2\fboxrule
+    \leavevmode\psboxit{box 0.6 setgray fill}{\framebox[\dimen1]{\phantom x}}}}
+\def\Xgbox{{\fboxsep0pt\setbox1\hbox{X}\dimen1\ht1\advance\dimen1by2\fboxrule
+    \leavevmode\psboxit{box 0.6 setgray fill}{\framebox[\dimen1]{\phantom X}}}}
+
+% ---------------------------------------------------------------------------
+% Ueberschrift (dreiteilig: links,Mitte,rechts; mit zwei Querbalken) 7.11.94
+% ---------------------------------------------------------------------------
+\long\def\header#1#2#3{\par\hrule\smallskip{\large\bf
+         \hbox to\textwidth{\rlap{#1}\hfill{#2}\hfill\llap{#3}}}
+         \smallskip\hrule\par\bigskip}
+
+% ---------------------------------------------------------------------------
+% Einbinden von PCX-Bildern:
+% ---------------------------------------------------------------------------
+\def\pcxget#1#2#3#4#5{\hbox to #2{\hskip#3%   zum Einbinden von PCX-Files
+\vbox to #4{\vskip#5\special{em:graph #1}\vss}\hss}}
+\def\pcx#1#2#3#4#5%  Einlesen von PCX-Files, HAA,15.10.1993
+{\parbox{#2}{\vspace*{#5}\hskip#3\special{em:graph #1}%
+\vspace{-#5}\vspace{#4}}}
+\def\pcxt#1#2#3#4#5%  Einlesen von PCX-Files, HAA,15.10.1993
+{\parbox[t]{#2}{\vspace*{#5}\hskip#3\special{em:graph #1}%
+\vspace{-#5}\vspace{#4}}}
+\def\pcxb#1#2#3#4#5%  Einlesen von PCX-Files, HAA,15.10.1993
+{\parbox[b]{#2}{\vspace*{#5}\hskip#3\special{em:graph #1}%
+\vspace{-#5}\vspace{#4}}}
+
+% ---------------------------------------------------------------------------
+% Positionierung von Texten:
+% ---------------------------------------------------------------------------
+
+\newbox\insertbox
+\long\def\position#1#2#3{{\global\setbox\insertbox\hbox{#3}\unskip%
+\hskip#2\makebox[0pt][l]{%
+\vtop to0pt{\vskip#1\vskip-\ht\insertbox\copy\insertbox\vss}}%
+\unskip\hskip-#2}}%
+\long\def\positionc#1#2#3{{\global\setbox\insertbox\hbox{#3}\unskip%
+\hskip#2\makebox[0pt][c]{%
+\vtop to0pt{\vskip#1\vskip-\ht\insertbox\copy\insertbox\vss}}%
+\unskip\hskip-#2}}%
+\def\xposition#1#2{\makebox[0mm][l]{\hskip#1#2}}
+
+% ---------------------------------------------------------------------------
+% Beschriften von 70x73mm Etiketten
+% ---------------------------------------------------------------------------
+
+\newdimen\ypos\newdimen\xpos
+\long\def\Label#1#2#3{%
+   \ypos37.125mm\multiply\ypos by#1\advance\ypos by -37.125mm
+   \xpos70.000mm\multiply\xpos by#2\advance\xpos by -70.000mm
+   \advance\ypos by21.00mm\advance\xpos by 5mm
+   \position{\ypos}{\xpos}{$\vcenter{
+   \begin{minipage}{60mm}#3\end{minipage}}$}}
+
+% ---------------------------------------------------------------------------
+% Diverse Definitionen:
+% ---------------------------------------------------------------------------
+
+% Schleife als \long\def:
+\long\def\LOOP#1\repeat{\long\def\iterate{#1\relax\expandafter\iterate\fi}%
+\iterate\let\iterate\relax}
+
+\def\topfraction{1}
+\def\bottomfraction{1}
+\def\textfraction{0}
+
+\def\circled#1{\bigcirc\mkern-9mu\hbox to 0pt{\footnotesize\hss#1\hss}\mkern9mu}
+\def\1{} % macht gar nichts,dient nur zum Einfuegen vom \index-Befehl
+\def\2{} % macht gar nichts,dient nur zum Einfuegen vom \index-Befehl
+
+\def\eq{&\!\!\!\!=\!\!\!\!&}
+\def\nn{\nonumber}
+\def\MM{\mbox{}}
+\def\LL{{\cal L}}
+\def\unit#1{\>{\rm #1}}
+\def\formelbox#1{\fbox{$\DD{\VV\quad#1\quad}$}}
+\def\promille{\,\, ^{\rm o}\mkern-1\thinmuskip/_{\mkern-1\thinmuskip\rm oo}}
+\def\entspricht{=^{\mkern-4.8\thinmuskip^\wedge}}
+\def\eff{_{\rm eff}}
+\def\d{{\rm d}}
+\def\dd{\,{\rm d}}
+\def\VERT{\mathclose{\,\V{\int}\vrule\,}}
+
+\def\bmatrix#1{\left[\matrix{#1}\right]}
+\def\UB#1#2{\mathinner{\underbrace{#1}_{#2}}}
+\def\OB#1#2{\mathinner{\overbrace{#1}_{#2}}}
+
+\def\UU#1{\underline{#1}}
+\def\UUU#1{\underline{\underline{#1}}}
+\def\TT#1{{\textstyle{#1}}}
+\def\DD#1{{\displaystyle{#1}}}
+\def\SS#1{{\scriptstyle{#1}}}
+\def\SSS#1{{\scriptscriptstyle{#1}}}
+\def\VV{\vphantom{{(\over(}}}
+\def\H#1{{\hphantom{#1}}}
+\def\V#1{{\vphantom{#1}}}
+
+\def\N{\noalign{\smallskip}}
+\def\NN{\noalign{\medskip}}
+\def\NNN{\noalign{\bigskip}}
+
+\def\Re{\mathop{\rm Re}\nolimits}
+\def\Im{\mathop{\rm Im}\nolimits}
+\def\e#1{\mathinner{\mathop{\rm e}^{#1}\nolimits}}
+\def\arg{\mathop{\rm arg}\nolimits}
+
+\let\theta=\vartheta
+\let\epsilon=\varepsilon
+\let\phi=\varphi
+
+\def\symboltable{%
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|}
+\hline &$0$&$1$&$2$&$3$&$4$&$5$&$6$&$7$&$8$&$9$ \\\hline\hline
+$000$&\symbol{000} &\symbol{001} &\symbol{002} &\symbol{003} &\symbol{004} &\symbol{005} &\symbol{006} &\symbol{007} &\symbol{008} &\symbol{009} \\ \hline
+$010$&\symbol{010} &\symbol{011} &\symbol{012} &\symbol{013} &\symbol{014} &\symbol{015} &\symbol{016} &\symbol{017} &\symbol{018} &\symbol{019} \\ \hline
+$020$&\symbol{020} &\symbol{021} &\symbol{022} &\symbol{023} &\symbol{024} &\symbol{025} &\symbol{026} &\symbol{027} &\symbol{028} &\symbol{029} \\ \hline
+$030$&\symbol{030} &\symbol{031} &\symbol{032} &\symbol{033} &\symbol{034} &\symbol{035} &\symbol{036} &\symbol{037} &\symbol{038} &\symbol{039} \\ \hline
+$040$&\symbol{040} &\symbol{041} &\symbol{042} &\symbol{043} &\symbol{044} &\symbol{045} &\symbol{046} &\symbol{047} &\symbol{048} &\symbol{049} \\ \hline
+$050$&\symbol{050} &\symbol{051} &\symbol{052} &\symbol{053} &\symbol{054} &\symbol{055} &\symbol{056} &\symbol{057} &\symbol{058} &\symbol{059} \\ \hline
+$060$&\symbol{060} &\symbol{061} &\symbol{062} &\symbol{063} &\symbol{064} &\symbol{065} &\symbol{066} &\symbol{067} &\symbol{068} &\symbol{069} \\ \hline
+$070$&\symbol{070} &\symbol{071} &\symbol{072} &\symbol{073} &\symbol{074} &\symbol{075} &\symbol{076} &\symbol{077} &\symbol{078} &\symbol{079} \\ \hline
+$080$&\symbol{080} &\symbol{081} &\symbol{082} &\symbol{083} &\symbol{084} &\symbol{085} &\symbol{086} &\symbol{087} &\symbol{088} &\symbol{089} \\ \hline
+$090$&\symbol{090} &\symbol{091} &\symbol{092} &\symbol{093} &\symbol{094} &\symbol{095} &\symbol{096} &\symbol{097} &\symbol{098} &\symbol{099} \\ \hline
+$100$&\symbol{100} &\symbol{101} &\symbol{102} &\symbol{103} &\symbol{104} &\symbol{105} &\symbol{106} &\symbol{107} &\symbol{108} &\symbol{109} \\ \hline
+$110$&\symbol{110} &\symbol{111} &\symbol{112} &\symbol{113} &\symbol{114} &\symbol{115} &\symbol{116} &\symbol{117} &\symbol{118} &\symbol{119} \\ \hline
+$120$&\symbol{120} &\symbol{121} &\symbol{122} &\symbol{123} &\symbol{124} &\symbol{125} &\symbol{126} &\symbol{127} &\symbol{128} &\symbol{129} \\ \hline
+$130$&\symbol{130} &\symbol{131} &\symbol{132} &\symbol{133} &\symbol{134} &\symbol{135} &\symbol{136} &\symbol{137} &\symbol{138} &\symbol{139} \\ \hline
+$140$&\symbol{140} &\symbol{141} &\symbol{142} &\symbol{143} &\symbol{144} &\symbol{145} &\symbol{146} &\symbol{147} &\symbol{148} &\symbol{149} \\ \hline
+$150$&\symbol{150} &\symbol{151} &\symbol{152} &\symbol{153} &\symbol{154} &\symbol{155} &\symbol{156} &\symbol{157} &\symbol{158} &\symbol{159} \\ \hline
+$160$&\symbol{160} &\symbol{161} &\symbol{162} &\symbol{163} &\symbol{164} &\symbol{165} &\symbol{166} &\symbol{167} &\symbol{168} &\symbol{169} \\ \hline
+$170$&\symbol{170} &\symbol{171} &\symbol{172} &\symbol{173} &\symbol{174} &\symbol{175} &\symbol{176} &\symbol{177} &\symbol{178} &\symbol{179} \\ \hline
+$180$&\symbol{180} &\symbol{181} &\symbol{182} &\symbol{183} &\symbol{184} &\symbol{185} &\symbol{186} &\symbol{187} &\symbol{188} &\symbol{189} \\ \hline
+$190$&\symbol{190} &\symbol{191} &\symbol{192} &\symbol{193} &\symbol{194} &\symbol{195} &\symbol{196} &\symbol{197} &\symbol{198} &\symbol{199} \\ \hline
+$200$&\symbol{200} &\symbol{201} &\symbol{202} &\symbol{203} &\symbol{204} &\symbol{205} &\symbol{206} &\symbol{207} &\symbol{208} &\symbol{209} \\ \hline
+$210$&\symbol{210} &\symbol{211} &\symbol{212} &\symbol{213} &\symbol{214} &\symbol{215} &\symbol{216} &\symbol{217} &\symbol{218} &\symbol{219} \\ \hline
+$220$&\symbol{220} &\symbol{221} &\symbol{222} &\symbol{223} &\symbol{224} &\symbol{225} &\symbol{226} &\symbol{227} &\symbol{228} &\symbol{229} \\ \hline
+$230$&\symbol{230} &\symbol{231} &\symbol{232} &\symbol{233} &\symbol{234} &\symbol{235} &\symbol{236} &\symbol{237} &\symbol{238} &\symbol{239} \\ \hline
+$240$&\symbol{240} &\symbol{241} &\symbol{242} &\symbol{243} &\symbol{244} &\symbol{245} &\symbol{246} &\symbol{247} &\symbol{248} &\symbol{249} \\ \hline
+$250$&\symbol{250} &\symbol{251} &\symbol{252} &\symbol{253} &\symbol{254} &\symbol{255} &             &             &             &             \\ \hline
+\end{tabular}
+}
