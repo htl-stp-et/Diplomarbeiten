@@ -1,0 +1,117 @@
+% ===========================================================================
+% et-abor.sty - Stylefile fuer Laborprotokolle            W.Haager, 25.9.2017
+% ===========================================================================
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[naustrian]{babel}
+\usepackage[width=160mm,height=240mm,centering]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor,tikz}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+\lhead{\uebung}
+\rhead{Seite \thepage}
+\lfoot{\jahrgang}
+\cfoot{Elektrotechnik}
+\rfoot{Gruppe \gruppe}
+\newif\ifindex\indextrue
+
+\usetikzlibrary{backgrounds,arrows.meta,shadows,circuits.ee.IEC,shapes,
+  decorations.pathmorphing,patterns,automata,positioning,calc,intersections}
+
+\doublerulesep=0pt
+
+\parskip=\medskipamount
+\parindent=0pt
+
+\definecolor{htlgruenp}{cmyk}{0.48,0,0.66,0.22}
+\definecolor{htlgraup}{cmyk}{0,0.05,0.04,0.69}
+
+% Definition der Logos (Parameter ist die Breite des Logos); ohne Text und
+% mit Text (in der Unterlaenge):
+
+\def\htlstplogo#1{{%
+  \resizebox{#1}{!}{\relax
+  \color{htlgruenp}\relax
+  \rule{3.22mm}{6.44mm}\rule[1.61mm]{3.22mm}{3.22mm}\hspace{0.33mm}\relax
+  \color{htlgraup}\relax
+  \rule{3.22mm}{6.44mm}\rule[3.22mm]{3.22mm}{3.22mm}\hspace{0.33mm}\relax
+  \color{htlgruenp}\relax
+  \rule{3.22mm}{6.44mm}\rule{3.22mm}{3.22mm}}}}
+
+\def\htlstptextlogo#1{{%
+  \resizebox{#1}{!}{\raisebox{-2.56mm}{\relax
+  \rlap{\fontfamily{SourceSansPro-LF}\fontseries{k}\relax
+  \fontsize{1.975mm}{5mm}\selectfont\hspace*{-0.07em}\relax
+  \color{htlgraup}HTL~ST.~P\"OLTEN}}\relax
+  \color{htlgruenp}\relax
+  \rule{3.22mm}{6.44mm}\rule[1.61mm]{3.22mm}{3.22mm}\hspace{0.33mm}\relax
+  \color{htlgraup}\relax
+  \rule{3.22mm}{6.44mm}\rule[3.22mm]{3.22mm}{3.22mm}\hspace{0.33mm}\relax
+  \color{htlgruenp}\relax
+  \rule{3.22mm}{6.44mm}\rule{3.22mm}{3.22mm}}}}
+
+\def\etheader{%
+   {\htlstptextlogo{35mm}\hfill
+   \fontfamily{SourceSansPro-LF}\fontseries{b}\relax\fontsize{7mm}{9mm}\selectfont
+   \color{htlgruenp}
+   ELEKTROTECHNIK}}
+
+\def\jahrgang{~}
+\def\uebung{~}
+\def\nummer{~}
+\def\lehrer{~}
+\def\uebungsdatum{~}
+\def\abgabedatum{~}
+\def\schueler{~}
+\def\gruppe{~}
+\def\schriftfuehrer{~}
+
+\def\Jahrgang#1{\def\jahrgang{#1}}
+\def\Uebung#1{\def\uebung{#1}}
+\def\Nummer#1{\def\nummer{#1}}
+\def\Lehrer#1{\def\lehrer{#1}}
+\def\Uebungsdatum#1{\def\uebungsdatum{#1}}
+\def\Abgabedatum#1{\def\abgabedatum{#1}}
+\def\Schueler#1{\def\schueler{#1}}
+\def\Gruppe#1{\def\gruppe{#1}}
+\def\Schriftfuehrer#1{\def\schriftfuehrer{#1}}
+
+\long\def\Titelseite{%
+    \begin{titlepage}
+        \def\arraystretch{1.5}
+        \doublerulesep=0pt
+        \parbox[b][0pt][b]{\textwidth}{\etheader}
+        \par\bigskip\bigskip\bigskip
+        \begin{center}
+         \LARGE\bfseries\sffamily Laborprotokoll\\\jahrgang
+        \end{center}
+        \par
+        \begin{tabularx}{\textwidth}{||X|X||}
+            \hline\hline
+            \textbf{Lehrer}          & \lehrer \\\hline
+            \textbf{\"Ubung \nummer} & \uebung \\\hline\hline
+            \textbf{Gruppe \gruppe} (Namen, Unterschriften)
+            & \parbox[t][0mm]{60mm}{\baselineskip=7.2mm\schueler\rule[-2mm]{0mm}{3mm}} \\\cline{2-2}
+            \textsl{} &\\\cline{2-2}
+                                     & \\\cline{2-2}
+                                     & \\\cline{2-2}
+                                     & \\\cline{2-2}
+                                     & \\\hline\hline
+                                     \textbf{Schriftf\"uhrer} & \schriftfuehrer \\\hline
+            \textbf{\"Ubungsdatum}   & \uebungsdatum \\\hline
+            \textbf{Abgabedatum}     & \abgabedatum \\\hline\hline
+            % \textbf{Unterschriften}  & \parbox[t][7\baselineskip]{60mm}{~\rule[-2mm]{0mm}{3mm}}\\\hline\hline
+        \end{tabularx}
+        \ifindex\par\vfill\tableofcontents\vfill\fi
+    \end{titlepage}
+    \setcounter{page}{1}
+}
+
+

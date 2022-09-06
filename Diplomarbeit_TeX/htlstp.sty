@@ -1,0 +1,43 @@
+% =============================================================================
+% htlstp.sty - Stylefile fuer die HTL St.Poelten         (W.Haager, 29.10.2018)
+% =============================================================================
+% Das Logo verwendet die Schrift "Source Sans Pro", die fuer TeX installiert
+% sein muss.
+
+\RequirePackage{color}
+\RequirePackage{graphicx}
+
+% Definition der Farben:
+
+% \definecolor{htlgruen}{rgb}{0.398,0.773,0.262}
+% \definecolor{htlgrau}{rgb}{0.3,0.3,0.3}
+\definecolor{htlgruen}{cmyk}{0.48,0,0.66,0.22}
+\definecolor{htlgrau}{cmyk}{0,0.05,0.04,0.69}
+
+% Definition der Logos (Parameter ist die Breite des Logos); ohne Text und
+% mit Text (in der Unterlaenge):
+
+\def\htlstplogo#1{{%
+  \resizebox{#1}{!}{\relax
+  \color{htlgruen}\relax
+  \rule{3.22mm}{6.44mm}\rule[1.61mm]{3.22mm}{3.22mm}\hspace{0.33mm}\relax
+  \color{htlgrau}\relax
+  \rule{3.22mm}{6.44mm}\rule[3.22mm]{3.22mm}{3.22mm}\hspace{0.33mm}\relax
+  \color{htlgruen}\relax
+  \rule{3.22mm}{6.44mm}\rule{3.22mm}{3.22mm}}}}
+
+\def\htlstptextlogo#1{{%
+  \resizebox{#1}{!}{\raisebox{-2.56mm}{\relax
+  \rlap{\fontfamily{SourceSansPro-LF}\fontseries{k}\relax
+  \fontsize{1.975mm}{5mm}\selectfont\hspace*{-0.07em}\relax
+  \color{htlgrau}HTL~ST.~P\"OLTEN}}\relax
+  \color{htlgruen}\relax
+  \rule{3.22mm}{6.44mm}\rule[1.61mm]{3.22mm}{3.22mm}\hspace{0.33mm}\relax
+  \color{htlgrau}\relax
+  \rule{3.22mm}{6.44mm}\rule[3.22mm]{3.22mm}{3.22mm}\hspace{0.33mm}\relax
+  \color{htlgruen}\relax
+  \rule{3.22mm}{6.44mm}\rule{3.22mm}{3.22mm}}}}
+
+
+
+% = ENDE htlstp.sty ===========================================================

@@ -1,0 +1,248 @@
+\responsible{Clemens Freudenthaler, Tobias Sturmlechner}
+Die Audio-Connect-Box ist ein allumfassendes und vielfältiges Audio-Interface. 
+Sie findet sowohl im professionellen, als auch im privaten Bereich Anwendung.
+Mit ihr ist es möglich, sowohl dynamische als auch Kondensatormikrofone, sowie Geräte mit Line-Ausgang zu verwenden. 
+Diese Eingangssignale können mit einem USB-C-Gerät, wie zum Beispiel einem Smartphone oder Computer, aufgenommen werden. 
+Ebenfalls können Signale des USB-C-Gerätes über den Output an Lautsprecher,
+Kopfhörer oder an ein Mischpult ausgegeben werden.
+Sofern kein USB-C-Gerät verbunden ist, kann die Audio-Connect-Box als DI-Box, Mikrofonvorverstärker oder zum Einkoppeln einer Phantomspannung genutzt werden.
+\vspace{3cm}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{Images/konzept/Blockschaltbild.pdf}
+        \caption*{Blockschaltbild}
+    \end{figure}
+
+\pagebreak
+
+\section{Bedienelemente und Anschlüsse}
+\subsection{Vorderseite}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{Images/anhang/Frame-2.eps}
+        \caption*{}
+    \end{figure}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item[\ding{202}] \textbf{[ON/OFF] - Schalter}    \\
+            Schaltet die Audio-Connect-Box ein / aus. 
+            Schalten Sie diesen Schalter ein, wenn Sie die Audio-Connect-Box verwenden wollen.
+        \item[\ding{203}] \textbf{[ON/OFF] - Anzeige}    \\
+            Leuchtet grün, wenn der Schalter [ON/OFF] gedrückt ist.
+        \item[\ding{204}] \textbf{[USB-C] - Anschluss}    \\
+            Für den Anschluss an ein unterstütztes USB-C-Gerät.
+        \item[\ding{205}] \textbf{[AKKU] - Anzeige}    \\
+            Während des Ladens wechselt die \ac{led} abwechselnd jede Sekunde zwischen rot und grün.
+            Bei zu geringem Ladestand blinkt die \ac{led} rot. Ist der Akku voll geladen, leuchtet die \ac{led} durchgehend grün.
+            Bei Verwendung des Akkus leuchtet die \ac{led} durchgehend rot.
+        \item[\ding{206}] \textbf{[POWER SOURCE] - Schalter}    \\
+            Schaltet zwischen interner und externer Spannungsversorgung um. 
+            Um Spannung über den [USB-C]-Anschluss bereitzustellen, darf der Schalter nicht gedrückt sein.
+            Soll der interne Akku verwendet werden, muss sich der Schalter in der gedrückten Stellung befinden.
+        \item[\ding{207}] \textbf{[OUTPUT] - Regler}    \\
+            Regelt die Lautstärke der Buchsen [LINE] \& [XLR]. 
+            An der linken Endposition ist der Ausgangspegel minimal. 
+            Durch Drehen nach rechts können Sie die Lautstärke erhöhen.
+        \item[\ding{208}] \textbf{[PHONES] - Buchse}    \\
+            Diese 6.3mm-Klinkenbuchse dient dem Anschluss eines Stereokopfhörers.
+        \item[\ding{209}] \textbf{[PHONES] - Regler}    \\
+            Regelt die Lautstärke der Buchse [PHONES]. 
+            An der linken Endposition ist der Ausgangspegel minimal. 
+            Durch Drehen nach rechts können Sie die Lautstärke erhöhen.
+    \end{enumerate}
+\end{multicols}
+
+\pagebreak
+\subsection{Eingangsseite}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Images/anhang/Frame-1.eps}
+        \caption*{}
+    \end{figure}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item[\ding{202}] \textbf{[48V] - Schalter}    \\
+            Schaltet die Phantomspannung für den jeweiligen Kanal ein und aus. Wenn Sie diesen Schalter gedrückt haben, wird das an der jeweiligen Kombibuchse [MIC/LINE] angeschlossene Gerät mit Phantomspannung versorgt. Schalten Sie diesen Schalter nur ein, nachdem Sie an den analogen Eingangsbuchsen phantomgespeiste Geräte wie zum Beispiel ein Kondensatormikrofon angeschlossen haben. Schalten Sie die Phantomspannung immer aus, wenn sie nicht erforderlich ist.
+        \item[\ding{203}] \textbf{[MIC/LINE] - Kombibuchsen}    \\
+            An dieser Buchse können XLR- und Klinkenstecker (symmetrische/unsymmetrische) wie zum Beispiel Mikrofone und Geräte mit Line-Pegel angeschlossen werden. 
+        \item[\ding{204}] \textbf{[GAIN] - Regler}    \\
+            Regelt die Vorverstärkung des Eingangssignals der jeweiligen Kombibuchse [MIC/LINE]. 
+            An der linken Endposition ist die Verstärkung des Eingangspegels minimal. 
+            Durch Drehen nach rechts können Sie die Verstärkung erhöhen.
+        \item[\ding{205}] \textbf{[PEGEL] - Anzeigen}    \\
+            Leuchten je nach Eingangssignal des jeweiligen Kanals auf. 
+            Sobald ein Signal am Eingang anliegt, leuchtet die jeweilige \ac{led} grün.
+            Die Anzeigen leuchten orange/rot, kurz bevor der Pegel des Eingangssignals die Verzerrungsgrenze erreicht (Übersteuern).
+    \end{enumerate}
+\end{multicols}
+
+\pagebreak
+\subsection{Ausgangsseite}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Images/anhang/Frame-3.eps}
+        \caption*{}
+    \end{figure}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item[\ding{202}] \textbf{[GROUND LIFT] - Schalter}    \\
+            Dieser Schalter trennt die Masseverbindung der Ausgangsbuchsen [XLR 1/2] \& [LINE 1/2] im gedrückten Zustand.
+            Bei der Verwendung von unsymmetrischen Klinkensteckern für die Buchsen [LINE 1/2] ist dieser Schalter auf jeden Fall zu lösen.
+            Grundsätzlich wird empfohlen, diesen Schalter nicht zu drücken. Bei einem Grundrauschen aufgrund von Einkopplungen auf der Leitung ist das Drücken des Schalters eine mögliche Lösung. Dies ist vom jeweiligen Anwendungsfall abhängig.
+        \item[\ding{203}] \textbf{[XLR L/1 \& R/2] - Buchse}    \\
+            Zum Anschließen von aktiven Lautsprechern oder
+            externen Geräten mit Line-Pegel. An diesen Buchsen
+            können XLR-Stecker angeschlossen werden. 
+        \item[\ding{204}] \textbf{[LINE L/1] - Buchse}    \\
+            Zum Anschließen von aktiven Lautsprechern oder
+            externen Geräten mit Line-Pegel. An dieser Buchse
+            können 6.3mm-Klinkenstecker (symmetrisch/unsymmetrisch)
+            angeschlossen werden. 
+            Wenn ausschließlich diese Buchse verwendet wird, wird an dieser ein Mono-Signal des linken und rechten Kanals ausgegeben.
+        \item[\ding{205}] \textbf{[LINE R/2] - Buchse}    \\
+            Zum Anschließen von aktiven Lautsprechern oder
+            externen Geräten mit Line-Pegel. An dieser Buchse
+            können 6.3mm-Klinkenstecker (symmetrisch/unsymmetrisch)
+            angeschlossen werden.
+    \end{enumerate}
+\end{multicols}
+
+\pagebreak
+
+\section{Verwendung der Audio-Connect-Box}
+\label{sec:anleitung-verwendung}
+Der USB-Chip (USB AUDIO CODEC) der \ac{acb} funktioniert über den USB Audio Class 1 Standard.
+Deshalb ist keine Installation von Treibern oder zusätzlicher Software nötig. Der USB Audio Class 1 Standard wird von allen modernen Betriebssystemen standardmäßig unterstützt. Bei den meisten Geräten wird ein neu verbundenes Audiogerät sofort als Ein-/Ausgabegerät ausgewählt. Ist dies nicht der Fall, beachten Sie bitte die folgenden, zu Ihrem Betriebssystem passenden, Anweisungen.
+\subsection{Windows}
+
+\begin{minipage}[t]{0.55\textwidth}
+Unterstützt werden die Betriebssystemversionen Windows 7/8/8.1/10 und Windows 11.
+Bei Windows kann die \ac{acb} als Audiogerät in der Taskleiste beim Lautsprechersymbol oder unter \dq Einstellungen > System > Sound\dq\; ausgewählt werden.
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+    
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/anhang/windows_taksbar.png}
+    \caption*{}
+\end{figure}
+
+\end{minipage}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/anhang/windows_pref.png}
+    \caption*{}
+\end{figure}
+Die Bitrate und Samplingfrequenz kann unter  \dq Rechtsklick auf Lautsprechersymbol > Sounds > Wiedergabe/Aufnahme > USB AUDIO CODEC > Eigenschaften > Erweitert\dq\; eingestellt werden.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/anhang/windows_old.png}
+    \caption*{}
+\end{figure}
+
+\subsection{MacOS}
+\begin{minipage}[t]{0.55\textwidth}
+    Die \ac{acb} sollte mit allen Versionen von macOS kompatibel sein, jedoch kann dies nur unter Verwendung von macOS Mojave (10.14) garantiert werden. Bei MacOS kann die \ac{acb} in der Menüleiste beim Lautsprechersymbol oder unter \dq Einstellungen > Ton > Eingabe/Ausgabe\dq\; der USB AUDIO CODEC ausgewählt werden. 
+\end{minipage}
+\pagebreak
+\begin{minipage}[t]{0.45\textwidth}
+    \vspace{0pt}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/anhang/mac_bar.png}
+\end{minipage}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Images/anhang/mac_preferences.png}
+    \caption*{}
+\end{figure}
+Die Bitrate und Samplingfrequenz kann unter \dq Spotlight-Suche > Audio MIDI Setup.app > USB AUDIO CODEC 1/2\dq\; eingestellt werden.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Images/anhang/mac_audio-midi.png}
+    \caption*{}
+\end{figure}
+\pagebreak
+\subsection{Linux}
+Die \ac{acb} ist grundsätzlich mit allen gängigen Linux-Distributionen kompatibel, jedoch wurde die korrekte Funktion nur mit Ubuntu 20.4.1 LTS getestet. Bei Linux kann das Audiogerät unter \dq Einstellungen > Sounds > Input/Output\dq\; ausgewählt werden.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/anhang/linux.png}
+    \caption*{}
+\end{figure}
+
+\pagebreak
+\subsection{Android}
+\begin{minipage}[t]{0.55\textwidth}
+Eine Verwendung der \ac{acb} mit Android-Geräten sollte ab Android 5.0 möglich sein, sofern dies durch den jeweiligen Hersteller nicht unterbunden wird. Getestet wurde die korrekte Funktionsweise mit diversen neuen Android-Geräten von Samsung, Google, Motorola und Xiaomi. 
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+    \vspace{-5pt}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/anhang/Android_music.jpg}
+\end{minipage}
+
+
+\subsection{iOS}
+\begin{minipage}[t]{0.55\textwidth}
+Bei der Verwendung der \ac{acb} mit iOS-Geräten ist der \dq Lightning auf USB Kamera-Adapter\dq\; notwendig.
+Das Audiogerät kann direkt in den jeweiligen Audioapps, wie zum Beispiel in der Musikapp, Spotify oder GarageBand, ausgewählt werden. 
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+    \vspace{0pt}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/anhang/ios_device.png}
+\end{minipage}
+
+
+
+
+\pagebreak
+
+\section{Fehlerbehebung}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|L{4cm}|X|}
+        \hline
+        \cellcolor[rgb]{ .816,  .808,  .808} \textbf{Das Gerät lässt sich ohne USB-Verbindung nicht einschalten.} & \textbf{Ist der Akku ausreichend geladen?} \newline
+            Wurde das Gerät längere Zeit nicht verwendet, besteht die Möglichkeit, dass sich der Akku entladen hat.
+            Versuchen Sie den Akku über die USB-C-Buchse zu laden. \\
+        \hline
+        \cellcolor[rgb]{ .906,  .902,  .902} \textbf{Das Gerät lässt sich mit USB-Verbindung nicht einschalten.} & \textbf{Ist der [POWER SOURCE] - Schalter in der richtigen Position?} \newline
+            Überprüfen Sie, ob bei nicht gedrücktem Schalter, das angeschlossene USB-C-Gerät den erforderlichen Strom zur Verfügung stellen kann (Probleme bei Smartphones).
+            Überprüfen Sie, ob bei gedrücktem Schalter, der Akku ausreichend geladen ist. \\
+        \cline{2-2} \cellcolor[rgb]{ .906,  .902,  .902} & \textbf{Ist das verwendete USB-C-Kabel intakt?} \newline 
+            Wenn das USB-C-Kabel gebrochen oder anderweitig beschädigt ist, ersetzen Sie das Kabel durch ein neues. Verwenden Sie kein USB-C-Kabel mit einer Länge von mehr als drei Metern. \\
+        \hline
+        \cellcolor[rgb]{ .816,  .808,  .808} \textbf{Kein Ton} & \textbf{Ist das Gerät eingeschaltet bzw. wird die Audio-Connect-Box vom USB-C-Gerät erkannt?} \newline
+            Ist das Gerät nicht eingeschaltet, ist der volle Funktionsumfang nicht gegeben.
+            Wird die Audio-Connect-Box am USB-C-Gerät nicht angeführt, ist die Verbindung nicht aktiv.
+            Schalten Sie die Audio-Connect-Box ein und wählen Sie sie am USB-C-Gerät aus.\\
+        \cline{2-2} \cellcolor[rgb]{ .816,  .808,  .808} & \textbf{Sind die Lautstärkeregler des Geräts auf geeignete Pegel eingestellt?} \newline
+            Prüfen Sie die Pegel der Drehregler [OUTPUT] und [PHONES]. \\
+        \cline{2-2} \cellcolor[rgb]{ .816,  .808,  .808} & \textbf{Sind die Mikrofone, Lautsprecher oder Kopfhörer korrekt am Gerät angeschlossen?} \newline
+            Überprüfen Sie die korrekte Verbindung der angeschlossenen Geräte. \\
+        \hline
+    \end{tabularx}%
+\end{table}%
+  
+\pagebreak
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|L{4cm}|X|}
+        \hline
+        \cellcolor[rgb]{ .906,  .902,  .902}  \textbf{Ungewöhnlicher Klang, Rauschen, Verzerrungen} & \textbf{Leuchtet die [PEGEL] - Anzeige am verwendeten Eingang orange/rot?} \newline
+            Das Signal ist zu nahe oder über der Verzerrungsgrenze und kann nicht mehr richtig verarbeitet werden (Übersteuern).
+            Regeln Sie die Eingangsverstärkung zurück. \\
+        \cline{2-2}   \cellcolor[rgb]{ .906,  .902,  .902}       & \textbf{Liegt ein dauerhaftes Grundrauschen am Ausgabegerät an?} \newline
+            Das Einkoppeln von anderen Signalen oder Störungen - vor allem bei langen Leitungen - kann zu diesem Rauschen führen.
+            Das Betätigen des [GROUND LIFT] - Schalters kann zur Lösung des Problems beitragen. \\
+        \cline{2-2}   \cellcolor[rgb]{ .906,  .902,  .902}       & \textbf{Wurde die Audio-Connect-Box am USB-C-Gerät richtig konfiguriert?} \newline
+            Überprüfen Sie die eingestellte Bitrate und Abtastfrequenz und passen Sie diese gegebenenfalls an (siehe Kapitel \ref{sec:anleitung-verwendung}) \\
+        \hline
+    \end{tabularx}%
+\end{table}%
+  
+

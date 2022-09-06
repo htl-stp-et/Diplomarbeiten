@@ -1,0 +1,55 @@
+\responsible{Martina Musterfrau}
+
+Theoretische Abhandlungen und Literaturrecherche. Es ist wichtig dass die Person die das jeweilige Kapitel verfasst hat davor im \verb|\responsible{}|-Tag angeführt ist. Bitte unbedingt zitieren!
+
+Zitiert kann entweder direkt nach dem einem Absatz werden. Dafür wird am Ende
+
+\section{Referenzieren und Literatur mit \LaTeX}
+Prinzipiell gibt es zwei verschiedene Möglichkeiten ein Literaturverzeichnis zu erstellen: Manuell oder automatisch mit Unterstützung eines Hilfsprogrammes. Im folgenden wird das manuelle Erstellen mit der thebibliography-Umgebung erklärt, wie sie in der Diplomarbeitsvorlage angewandt wird. \cite{litKomb}
+
+In der HTL St. Pölten zitieren wir nach dem IEEE-Stil. Wie Einträge im Inhaltsverzeichnis aussehen sollen ist unter folgendem Link nachzulesen:
+
+\url{https://thesius.de/blog/articles/zitieren-ingenieur-ieee-din-iso-690/}
+
+\subsection{Literaturverzeichnis}
+Am Ende der Datei wird ein Abschnitt \verb|thebibliography| gesetzt. \verb|thebibliography| enthält die kompletten Informationen zu den Einträgen im Literaturverzeichnis.
+\begin{Verbatim}[frame=single]
+\begin{thebibliography}{laengste Labelbreite}
+	\bibitem[text]{bezugspunkt}
+\end{thebibliography}
+\end{Verbatim}
+In dem Feld \verb|laengste Labelbreite| wird etwas eingetragen, das mindestens so lang ist, wie das längste Label eines Eintrages (eine Zeile darunter).
+
+Das optionale Argument \verb|text| kann ein Label enthalten, welches sowohl im Text als auch im Literaturverzeichnis erscheint.
+
+Der Pflichtparameter \verb|bezugspunkt| enthält eine kurze Bezeichnung des Eintrages. Anhand dieser Bezeichnung wird ein Bezug von dem Verweis im Text zum Literaturverzeichnis erstellt.
+\begin{Verbatim}[frame=single]
+\begin{thebibliography}{99}
+  \bibitem[1]{tietze} U. Tietze und C. Schenk, \textit{Electronic 
+    circuits. handbook for design and application.} Heidelberg: 
+    Springer, 2015.
+  \bibitem[2]{litKomb} Wikibooks. (4.1.21) \textit{LaTeX-Kompendium: 
+    Schnellkurs: Erstellen eines Literaturverzeichnisses}. [Online]. 
+    Available: \url{https://de.wikibooks.org/wiki/LaTeX-Kompendium:
+    \_Schnellkurs:\_Erstellen\_eines\_Literaturverzeichnisses}
+\end{thebibliography}
+\end{Verbatim}
+Im \verb|\bibitem|-Befehl darf kein Zeilenumbruch verwendet werden.
+
+Um die Überschrift des Literaturverzeichnisses zu ändern, kann folgender Befehl verwendet werden:
+\begin{Verbatim}[frame=single]
+\renewcommand{\refname}{Mein Literaturverzeichnis}
+\end{Verbatim}
+Das Literaturverzeichnis enthält alle Einträge, egal ob sie benutzt werden, oder nicht (im Gegensatz zu BibTeX, siehe unten).
+% ----------------------------------------------------------------------
+
+\subsection{Verweis aus dem Text}
+Im Text wird hinter dem Zitat der Befehl \verb|\cite| verwendet.
+\begin{Verbatim}[frame=single]
+.... Im Grunde besteht kein Unterschied zwischen einem normalen Ver-
+starker und einem Operationsverstarker. Beide dienen dazu, Spannungen 
+oder Leistungen zu verstärken. \cite[S.~44]{tietze} ...
+\end{Verbatim}
+Um eine Quelle in das Literaturverzeichnis aufzunehmen, ohne dass sie explizit im Text als Quelle aufgeführt wird, ist \verb|\nocite| zu verwenden.
+
+\nocite{tietze}
