@@ -101,9 +101,10 @@
 				\cfoot{}%mitte unten
 				\ofoot{}%rechts unten
 				\setfootsepline{.5pt}%Linie unten
-				\ihead{\headmark}% links oben: Chapter
+				%% Verändert Kappel, Hieber 2023 -> für Doppelseitigen Druck
+				\ihead{\pagemark}% links oben: Seitennummer
 				\chead{}%mitte oben
-				\ohead{\pagemark}% rechts oben: Seitennummer
+				\ohead{\headmark}% rechts oben: Chapter
 				\setheadsepline{.5pt}%Linie oben
 				}%
 % Damit auf Chapter-Seiten keine Nummern sind!!!
@@ -455,6 +456,7 @@
 %% Die Anregung zu dieser Loesung lieferte die Diplom-
 %% arbeit von Florian Griessler und Julian Palmers,
 %% 5AHETI 2012
+
 \long\def\@@eid@text{%% Text:
 					Ich erkl\"are an Eides statt, dass ich die vorliegende
 					Diplomarbeit selbst\"andig und ohne fremde Hilfe
@@ -465,6 +467,7 @@
 					}
 \def\unterschrift#1{\\ \\ \\ \hline\makebox[60mm]{#1}\\}
 \newenvironment{Eid}{%
+					\setcounter{page}{2}%% Verändert Breitner 2023-> Eidesstattliche Erklärung Seite 2 für Doppelseitigen Druck
 					\null\vfill%vertikales Zentrieren ueber \vfill
 					\section*{\@eidname}%Section anlegen
 					\begin{center}%zentriert

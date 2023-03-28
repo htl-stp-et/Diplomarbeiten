@@ -1,6 +1,7 @@
   %% diplomarbeit.tex
   %% Copyright 2015 Simon M. Laube
   %% Update 2022 by Clemens Freudenthaler and Felix Pfahler
+  %% Update 2023 by Katja Breitner, Luca Kappel and Mario Hieber for doublesided Print 
   %
   % This work may be distributed and/or modified under the
   % conditions of the LaTeX Project Public License, either version 1.3
@@ -160,13 +161,18 @@
 %\def\emptyprintpages{1}
 %\def\emptyprintpages{1}
 
-%\def\blankpage{
-%      \clearpage
-%      \thispagestyle{empty}
-%      \addtocounter{page}{-1}
-%      \null
-%      \clearpage}
+% Leere Seite mit Kopf- und Fußzeile
+\def\blankpage{
+	\clearpage
+	\null
+	\clearpage}
 
+% Leere Seite ohne Kopf- und Fußzeile 
+\def\blankemptypage{
+	\clearpage
+	\thispagestyle{empty}
+	\null
+	\clearpage}
 
 \begin{document}
 
@@ -185,7 +191,7 @@
 \end{Eid}
 %%======================================================%%
 
-\cleardoublepage
+\blankpage
 
 %%================ Diplomandenvorstellung ==============%%
 \input{Textparts/diplomanden.tex}
