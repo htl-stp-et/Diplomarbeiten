@@ -178,7 +178,6 @@
 
 \frontmatter
 %%================ Titelseite ==========================%%
-\cleardoublepage
 \maketitle
 % Verantwortliche/Verfasser
 \responsible{Max Mustermann, Martina Musterfrau}
@@ -197,12 +196,12 @@
 \input{Textparts/diplomanden.tex}
 \responsible{Max Mustermann, Martina Musterfrau}
 %%======================================================%%
-\cleardoublepage
+\blankpage
 
 %%================ Danksagungen ========================%%
 \input{Textparts/danksagungen.tex}
 %%======================================================%%
-\cleardoublepage
+\blankpage
 
 %%================ Abstract /Zusammenfass. =============%%
 \input{Textparts/kurzfassung.tex}
@@ -210,20 +209,20 @@
 %\selectlanguage{english} % necessary for English speaking users
 % delete this line if your native language is German 
 %%======================================================%%
-\cleardoublepage
+\blankpage
 %% Beiblaetter
-\includepdf[pages={1-2}, scale=1]{HTL_RDP_Dokumentation_DA_DE_A4_2022.pdf}
-\includepdf[pages={1-2}, scale=1]{HTL_RDP_Dokumentation_DA_EN_A4_2022.pdf}
+\includepdf[pages={1-2},noautoscale=false,fitpaper=false,scale=0.8, pagecommand={}]{HTL_RDP_Dokumentation_DA_DE_A4_2022.pdf}
+\includepdf[pages={1-2},noautoscale=false,fitpaper=false,scale=0.8, pagecommand={}]{HTL_RDP_Dokumentation_DA_EN_A4_2022.pdf}
 
 %%================ Inhaltsverzeichnis ==================%%
 \tableofcontents
-\cleardoublepage
+
 %%======================================================%%
 
 
 % Ab hier Hauptteil
 \mainmatter
-
+\blankpage
 \chapter{Einleitung}
 \input{Textparts/main/einleitung.tex}
 
